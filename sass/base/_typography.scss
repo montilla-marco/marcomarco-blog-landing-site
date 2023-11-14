@@ -1,0 +1,45 @@
+body {
+  /* specifies a prioritized list of one or more font family names */
+  font-family: "Lato", sans-serif;
+  /* sets the weight (or boldness) of the font */
+  font-weight: 400;
+  /* sets the size of the font. Changing the font size also updates the sizes of the font size-relative <length> units, such as em, ex, and so forth. */
+  /* font-size: 16px; */
+  /* sets the height of a line box. It's commonly used to set the distance between lines of text. On block-level elements, it specifies the
+    minimum height of line boxes within the element. On non-replaced inline elements, it specifies the height that is used to calculate line box height. */
+  line-height: 1.2;
+  color: #777;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+
+  /* sets whether the back face of an element is visible when turned towards the user */
+  backface-visibility: hidden;
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+
+    animation: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+
+    /* animation-delay: 3s;
+          animation-iteration-count: 3; */
+  }
+
+  &--sub {
+    margin-top: 3rem;
+    display: block;
+    font-size: 2.3rem;
+    font-weight: 700;
+    letter-spacing: 1.74rem;
+
+    /* shortcut form */
+    animation: moveInRight 1s ease-in;
+  }
+}

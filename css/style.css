@@ -1,0 +1,195 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
+/* controls the intermediate steps in a CSS animation sequence by defining styles for keyframes (or waypoints) along the animation sequence. 
+This gives more control over the intermediate steps of the animation sequence than transitions. */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* Normalize */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  /* specifies a prioritized list of one or more font family names */
+  font-family: "Lato", sans-serif;
+  /* sets the weight (or boldness) of the font */
+  font-weight: 400;
+  /* sets the size of the font. Changing the font size also updates the sizes of the font size-relative <length> units, such as em, ex, and so forth. */
+  /* font-size: 16px; */
+  /* sets the height of a line box. It's commonly used to set the distance between lines of text. On block-level elements, it specifies the
+    minimum height of line boxes within the element. On non-replaced inline elements, it specifies the height that is used to calculate line box height. */
+  line-height: 1.2;
+  color: #777;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  /* sets whether the back face of an element is visible when turned towards the user */
+  backface-visibility: hidden;
+}
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  /* animation-delay: 3s;
+        animation-iteration-count: 3; */
+}
+.heading-primary--sub {
+  margin-top: 3rem;
+  display: block;
+  font-size: 2.3rem;
+  font-weight: 700;
+  letter-spacing: 1.74rem;
+  /* shortcut form */
+  animation: moveInRight 1s ease-in;
+}
+
+.landing-btn:link, .landing-btn:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-top: 3rem;
+  padding: 1rem 5rem;
+  display: inline-block;
+  border-radius: 10rem;
+  /* is a shorthand property for transition-property, transition-duration, transition-timing-function, and transition-delay. */
+  transition: all 0.2s;
+  font-size: 1.6rem;
+  position: relative;
+}
+.landing-btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+}
+.landing-btn:active {
+  transform: translateY(-0.1rem);
+}
+.landing-btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+.landing-btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+.landing-btn--orange {
+  font-weight: 700;
+  background-color: #ff9317;
+  color: #fc4630;
+}
+.landing-btn--orange::after {
+  background-color: #fc4630;
+}
+.landing-btn--animated {
+  /* property applies an animation between styles. It is a shorthand for animation-name, animation-duration, animation-timing-function, 
+  animation-delay, animation-iteration-count, animation-direction, animation-fill-mode, animation-play-state, and animation-timeline. */
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  /* sets how a CSS animation applies styles to its target before and after its execution. */
+  animation-fill-mode: backwards;
+}
+
+.landing-header {
+  /* vh stands for viewport height. This unit is based on the height of the viewport. A value of 1vh is equal to 1% of the viewport height.
+       A value of 100vh is equal to 100% of the viewport height. */
+  height: 95vh;
+  /* sets one or more background images on an element. */
+  background-image: linear-gradient(to right bottom, rgba(255, 147, 23, 0.6), rgba(196, 255, 13, 0.8)), url(../img/landing-background.jpg), url(../img/landing-background.jpg);
+  /* sets the size of the element's background image. The image can be left to its natural size, stretched, or constrained to fit the available space. */
+  background-size: contain, contain;
+  /* property sets the initial position for each background image. The position is relative to the position layer set by background-origin. */
+  /* background-position: bottom left, top left, top right; */
+  background-position: left, top right;
+  /* property creates a clipping region that sets what part of an element should be shown. Parts that are inside the region are shown, while those outside are hidden. */
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  position: relative;
+  background-repeat: no-repeat, no-repeat;
+  transform: scaleX(-1), scaleX(-1);
+}
+.landing-header__logo-box {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+.landing-header__logo {
+  height: 10rem;
+  transform: translate(-30%, -30%);
+}
+.landing-header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  /* lets you rotate, scale, skew, or translate an element. It modifies the coordinate space of the CSS visual formatting model. */
+  transform: translate(-53%, -50%);
+  /* The translate() CSS function repositions an element in the horizontal and/or vertical directions. Its result is a <transform-function> data type. */
+  text-align: center;
+}
+.landing-header__photo-box {
+  position: absolute;
+  top: 55%;
+  left: 12%;
+  background: url(../img/profile-photo.png) 30%/100rem 55rem no-repeat fixed content-box content-box transparent;
+  transform: translate(-30%, -30%);
+  height: 35rem;
+  width: 30rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  /* sets the padding area on all four sides of an element at once */
+  padding: 3rem;
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=style.css.map */

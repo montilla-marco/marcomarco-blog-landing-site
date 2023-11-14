@@ -1,0 +1,83 @@
+.landing-btn {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: 3rem;
+    padding: 1rem 5rem;
+    display: inline-block;
+    border-radius: 10rem;
+    /* is a shorthand property for transition-property, transition-duration, transition-timing-function, and transition-delay. */
+    transition: all 0.2s;
+    font-size: 1.6rem;
+    position: relative;
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+
+  &--orange {
+    font-weight: 700;
+    background-color: #ff9317;
+    color: #fc4630;
+
+    &::after {
+      background-color: #fc4630;
+    }
+  }
+
+  &--animated {
+    /* property applies an animation between styles. It is a shorthand for animation-name, animation-duration, animation-timing-function, 
+    animation-delay, animation-iteration-count, animation-direction, animation-fill-mode, animation-play-state, and animation-timeline. */
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    /* sets how a CSS animation applies styles to its target before and after its execution. */
+    animation-fill-mode: backwards;
+  }
+}
+// .btn-text {
+//     &:link,
+//     &:visited {
+//         font-size: $default-font-size;
+//         color: $color-primary;
+//         display: inline-block;
+//         text-decoration: none;
+//         border-bottom: 1px solid $color-primary;
+//         padding: 3px;
+//     }
+
+//     &:hover {
+//         background-color: $color-primary;
+//         color: $color-white;
+//         box-shadow: 0 .5rem 2rem rgba($color-black, .15);
+//         transform: translateY(-2px);
+//     }
+
+//     &:active {
+//         box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+//         transform: translateY(-2px);
+//     }
+// }

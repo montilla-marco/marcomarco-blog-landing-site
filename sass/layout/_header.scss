@@ -1,0 +1,58 @@
+.landing-header {
+  /* vh stands for viewport height. This unit is based on the height of the viewport. A value of 1vh is equal to 1% of the viewport height.
+       A value of 100vh is equal to 100% of the viewport height. */
+  height: 95vh;
+  /* sets one or more background images on an element. */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(255, 147, 23, 0.6),
+      rgba(196, 255, 13, 0.8)
+    ),
+    url(../img/landing-background.jpg), url(../img/landing-background.jpg);
+  /* sets the size of the element's background image. The image can be left to its natural size, stretched, or constrained to fit the available space. */
+  background-size: contain, contain;
+  /* property sets the initial position for each background image. The position is relative to the position layer set by background-origin. */
+  /* background-position: bottom left, top left, top right; */
+  background-position: left, top right;
+  /* property creates a clipping region that sets what part of an element should be shown. Parts that are inside the region are shown, while those outside are hidden. */
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+
+  position: relative;
+  background-repeat: no-repeat, no-repeat;
+  transform: scaleX(-1), scaleX(-1);
+
+  &__logo-box {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+  }
+
+  &__logo {
+    height: 10rem;
+    transform: translate(-30%, -30%);
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* lets you rotate, scale, skew, or translate an element. It modifies the coordinate space of the CSS visual formatting model. */
+    transform: translate(-53%, -50%);
+    /* The translate() CSS function repositions an element in the horizontal and/or vertical directions. Its result is a <transform-function> data type. */
+
+    text-align: center;
+  }
+
+  &__photo-box {
+    position: absolute;
+    top: 55%;
+    left: 12%;
+    background: url(../img/profile-photo.png) /* image */ 30% / 100rem 55rem
+      /* position / size */ no-repeat /* repeat */ fixed /* attachment */
+      content-box /* origin */ content-box /* clip */ transparent;
+    transform: translate(-30%, -30%);
+  
+    height: 35rem;
+    width: 30rem;
+  }
+}
