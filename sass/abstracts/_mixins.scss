@@ -1,3 +1,11 @@
+@mixin clearfix {
+  &::after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+}
+
 @mixin breakpoint($point) {
   @if $point == largedesktop {
     @media (max-width: 1920px) and (min-width: 1441px) {

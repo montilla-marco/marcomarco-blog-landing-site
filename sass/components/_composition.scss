@@ -1,0 +1,53 @@
+.composition {
+  position: relative;
+
+  &--photo {
+    width: 25%;
+    opacity: 0.6;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+    border-radius: 10rem;
+
+    background-image: url(../img/ups-bank.jpeg); /* image */ 
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    height: 68rem;
+    width: 40rem;
+  }
+
+  &__text-h2 {
+    position: absolute;
+    left: -35rem;
+    top: 3rem;
+  }
+
+  &__text-h3 {
+    position: absolute;
+    left: 0;
+    top: 13rem;
+  }
+
+  &__paragraph--1 {
+    position: absolute;
+    left: 0;
+    top: 18.5rem;
+  }
+
+  &__paragraph--2 {
+    position: absolute;
+    left: 0;
+    top: 34.5rem;
+  }
+
+  &__paragraph--3 {
+    position: absolute;
+    left: 0;
+    top: 45.5rem;
+  }
+
+  &__svg--about {
+    position: absolute;
+    left: 37rem;
+
+  }
+}

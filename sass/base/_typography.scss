@@ -43,3 +43,50 @@ body {
     animation: moveInRight 1s ease-in;
   }
 }
+
+.heading-secondary {
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: black;
+    color: transparent;
+    letter-spacing: 0.2rem;
+    transition: all 0.2s;
+    // property sets whether an element's background extends underneath its border box, padding box, or content box.
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    &--main {
+        letter-spacing: 0.6rem;
+        font-size: 7rem;
+        margin-bottom: 5rem;
+    }
+
+    &:hover {
+      // skewY() defines a transformation that skews an element in the vertical direction on the 2D plane.
+      // skewX() defines a transformation that skews an element in the horizontal direction on the 2D plane
+      transform: skewY(2deg) skewX(15deg);
+    }
+  }
+  
+  .heading-terciary {
+    font-size: $default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  
+  .paragraph {
+    font-size: $default-font-size;
+    font-weight: 400;
+    text-align: justify;
+    text-justify: inter-word;
+
+    &--small {
+        font-size: 1.4rem;
+    }
+  
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+  }

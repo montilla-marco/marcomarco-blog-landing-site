@@ -1,0 +1,51 @@
+.float-grid {
+    .row {
+       
+      // property sets the maximum width of an element. It prevents the used value of the width property from becoming larger than the value specified by max-width.
+      max-width:$f-grid-width;
+      // shorthand property sets the margin area on all four sides of an element.
+      margin: 0 auto;
+      // If an element is taller than the element containing it, and it is floated, it will overflow outside of its container.
+      @include clearfix;
+  
+      // The [attribute] selector is used to select elements with a specified attribute.
+      // [attribute^="value"] selector is used to select elements with the specified attribute, whose value starts with the specified value.
+      [class^="col-"] {
+          float: left;
+
+          &:not(:last-child) {
+              margin-right: $f-grid-horizontal-gutter;
+          }
+      }
+  
+      // evaluates a boolean expression and returns the opposite value.
+      &:not(:last-child) {
+          margin-bottom: $f-grid-vertical-gutter;
+      }
+  
+      .col-1-of-2 {
+          width: calc( (#{$f-grid-width} - #{$f-grid-horizontal-gutter}) / 2);
+      }
+  
+      .col-1-of-3 {
+          width: calc( (#{$f-grid-width} - 2 * #{$f-grid-horizontal-gutter}) / 3);
+      }
+  
+      .col-2-of-3{
+          width: calc( 2 * (#{$f-grid-width} - 2 * #{$f-grid-horizontal-gutter}) / 3 +  #{$f-grid-horizontal-gutter});
+      }
+  
+      .col-1-of-4 {
+          width: calc( (#{$f-grid-width} - 3 * #{$f-grid-horizontal-gutter}) / 4);
+      }
+  
+      .col-2-of-4 {
+          width: calc( 2 *  (#{$f-grid-width} - 3 * #{$f-grid-horizontal-gutter}) / 4 +  #{$f-grid-horizontal-gutter});
+      }
+  
+      .col-3-of-4 {
+          width: calc( 3 *  (#{$f-grid-width} - 3 * #{$f-grid-horizontal-gutter}) / 4 + 2 * #{$f-grid-horizontal-gutter});
+      }
+    }
+  }
+  

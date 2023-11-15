@@ -58,26 +58,27 @@
     animation-fill-mode: backwards;
   }
 }
-// .btn-text {
-//     &:link,
-//     &:visited {
-//         font-size: $default-font-size;
-//         color: $color-primary;
-//         display: inline-block;
-//         text-decoration: none;
-//         border-bottom: 1px solid $color-primary;
-//         padding: 3px;
-//     }
 
-//     &:hover {
-//         background-color: $color-primary;
-//         color: $color-white;
-//         box-shadow: 0 .5rem 2rem rgba($color-black, .15);
-//         transform: translateY(-2px);
-//     }
+.btn-text {
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        color: $color7;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color7;
+        padding: 3px;
+    }
 
-//     &:active {
-//         box-shadow: 0 .5rem 1rem rgba($color-black, .15);
-//         transform: translateY(-2px);
-//     }
-// }
+    &:hover {
+        background-color: $color7;
+        color: $color-white;
+        box-shadow: 0 .5rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(-2px);
+    }
+}
